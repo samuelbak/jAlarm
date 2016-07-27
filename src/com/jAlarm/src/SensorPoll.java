@@ -1,9 +1,11 @@
 package com.jAlarm.src;
 
-import com.jAlarm.IO.*;
+import com.jAlarm.io.*;
 
 public class SensorPoll implements Runnable {
 
+	public boolean stop = false;
+	
 	public SensorPoll() {
 		
 	}
@@ -11,9 +13,12 @@ public class SensorPoll implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("hello from sensor thread");
+		Thread.currentThread().setName("Sensor Thread");
 		while(jAlarm.armed==true){
+			if (stop == true)
+				break;
 			try {
-				this.wait(100);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

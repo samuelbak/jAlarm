@@ -1,4 +1,4 @@
-package com.jAlarm.IO;
+package com.jAlarm.io;
 
 public class Input {
 
