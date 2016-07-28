@@ -1,5 +1,6 @@
 package com.jAlarm.src;
 
+
 import com.jAlarm.io.Output;
 
 public class Siren implements Runnable {
@@ -14,6 +15,7 @@ public class Siren implements Runnable {
 	public void run() {
 		Thread.currentThread().setName("Siren Thread");
 		System.out.println("hello from siren thread");
+		
 		while(jAlarm.armed==true){
 			if (stop == true){
 				Output.writePin();

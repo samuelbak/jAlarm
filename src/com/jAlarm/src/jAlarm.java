@@ -1,5 +1,6 @@
 package com.jAlarm.src;
 
+import com.jAlarm.io.Interface;
 import com.jAlarm.util.Manage;
 
 public class jAlarm {
@@ -14,6 +15,7 @@ public class jAlarm {
 		network = new Network(12345);
 		net = new Thread(network);
 		net.start();
+		Interface.init();
 		while(1<2){
 			try {
 				Thread.sleep(10);
