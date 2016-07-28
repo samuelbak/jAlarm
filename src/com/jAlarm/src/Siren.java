@@ -18,7 +18,7 @@ public class Siren implements Runnable {
 		
 		while(jAlarm.armed==true){
 			if (stop == true){
-				Output.writePin();
+				Output.writePin(false);
 				break;
 			}
 			try {
@@ -27,7 +27,7 @@ public class Siren implements Runnable {
 				e.printStackTrace();
 			}
 			if(jAlarm.triggered==true)
-				Output.writePin();
+				Output.writePin(true);
 		}
 	}
 }

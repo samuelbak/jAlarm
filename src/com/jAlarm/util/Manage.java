@@ -1,5 +1,6 @@
 package com.jAlarm.util;
 
+import com.jAlarm.io.Output;
 import com.jAlarm.src.SensorPoll;
 import com.jAlarm.src.Siren;
 
@@ -30,6 +31,7 @@ public class Manage {
 		do{
 		}while(sensor.isAlive());
 		System.out.println("siren stopped");
+		Output.writePin(false);
 	}
 	
 	public static void restartAlarm(){

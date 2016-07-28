@@ -3,6 +3,7 @@ package com.jAlarm.src;
 
 
 import com.jAlarm.io.*;
+import com.jAlarm.util.EventLog;
 
 public class SensorPoll implements Runnable {
 
@@ -25,8 +26,11 @@ public class SensorPoll implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if (Input.readPin()==true)
+			if (Input.readPin()==true){
 				jAlarm.triggered = true;
+				EventLog.log("Movimento rilevato");
+				stop=true;
+			}
 		}
 	}
 }

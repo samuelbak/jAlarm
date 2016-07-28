@@ -14,7 +14,6 @@ public class Interface {
 		try {
 			piface  = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, SpiChannel.CS0);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
