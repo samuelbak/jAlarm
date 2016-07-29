@@ -15,11 +15,11 @@ public class jAlarm {
 	public static void main(String[] args) {
 		network = new Network(12345);
 		net = new Thread(network);
-		net.start();
 		Interface.init();
 		@SuppressWarnings("unused")
 		EventLog log = new EventLog();
-		EventLog.log("jAlarm starterd");
+		EventLog.log("jAlarm started");
+		net.start();
 		while(1<2){
 			try {
 				Thread.sleep(10);
@@ -27,16 +27,14 @@ public class jAlarm {
 				e.printStackTrace();
 			}
 			if (check==true){
-				if(armed==true){
+				if(armed==false){
 					triggered = false;
-					armed = false;
 					check=false;
 					Manage.stopAlarm();
 					EventLog.log("Allarme disattivato");
 				}
 				else{
 					triggered = false;
-					armed = true;
 					check = false;
 					Manage.startAlarm();
 					EventLog.log("Allarme attivato");
