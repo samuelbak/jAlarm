@@ -6,7 +6,6 @@ import com.jAlarm.util.Manage;
 
 public class jAlarm {
 	
-	public static final boolean SIMULATION = false;
 	static boolean armed = false;
 	static boolean triggered = false;
 	static boolean check = false;

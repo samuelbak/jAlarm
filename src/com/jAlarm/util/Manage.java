@@ -3,6 +3,7 @@ package com.jAlarm.util;
 import com.jAlarm.io.Output;
 import com.jAlarm.src.SensorPoll;
 import com.jAlarm.src.Siren;
+import com.jAlarm.src.jAlarm;
 
 public class Manage {
 	
@@ -25,11 +26,9 @@ public class Manage {
 	public static void stopAlarm(){
 		sirenObj.stop = true;
 		sensorObj.stop = true;
-		do{
-		}while(siren.isAlive());
+		do{}while(siren.isAlive());
 		System.out.println("sensor stopped");
-		do{
-		}while(sensor.isAlive());
+		do{}while(sensor.isAlive());
 		System.out.println("siren stopped");
 		Output.writePin(false);
 	}
