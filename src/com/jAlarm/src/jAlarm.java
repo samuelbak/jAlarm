@@ -6,6 +6,7 @@ import com.jAlarm.util.Manage;
 
 public class jAlarm {
 	
+	public static final boolean SIMULATION = false;
 	static boolean armed = false;
 	static boolean triggered = false;
 	static boolean check = false;
@@ -15,6 +16,15 @@ public class jAlarm {
 	public static void main(String[] args) {
 		network = new Network(12345);
 		net = new Thread(network);
+		/*
+		Thread wifiOn = null;
+		try {
+			wifiOn = new Thread(new KeepWiFiOn(60000,InetAddress.getByName("192.168.0.1"), 80, "hello"));
+		} catch (UnknownHostException e1) {
+			e1.printStackTrace();
+		}
+		wifiOn.start();
+		*/
 		Interface.init();
 		@SuppressWarnings("unused")
 		EventLog log = new EventLog();

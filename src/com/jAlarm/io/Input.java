@@ -1,11 +1,9 @@
 package com.jAlarm.io;
 
-
 public class Input {
 	
 	public static boolean readPin(){
-		return Interface.piface.getInputPin(4).isHigh();
-		                                
+		return Interface.piface.getInputPin(4).isHigh();                           
 	}
 
 }
