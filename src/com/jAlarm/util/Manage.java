@@ -3,7 +3,6 @@ package com.jAlarm.util;
 import com.jAlarm.io.Output;
 import com.jAlarm.src.SensorPoll;
 import com.jAlarm.src.Siren;
-import com.jAlarm.src.jAlarm;
 
 public class Manage {
 	
